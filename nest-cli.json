@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/video-cms/src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/video-cms/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/video-cms",
+  "projects": {
+    "discovery": {
+      "type": "application",
+      "root": "apps/discovery",
+      "entryFile": "main",
+      "sourceRoot": "apps/discovery/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/discovery/tsconfig.app.json"
+      }
+    },
+    "video-cms": {
+      "type": "application",
+      "root": "apps/video-cms",
+      "entryFile": "main",
+      "sourceRoot": "apps/video-cms/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/video-cms/tsconfig.app.json"
+      }
+    }
+  }
+}
