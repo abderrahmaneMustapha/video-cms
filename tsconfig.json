@@ -17,6 +17,25 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false,
-    "paths": {}
+    "paths": {
+      "defaultLibraryPrefix/config": [
+        "libs/config/src"
+      ],
+      "defaultLibraryPrefix/config/*": [
+        "libs/config/src/*"
+      ],
+      "defaultLibraryPrefix/databases": [
+        "libs/databases/src"
+      ],
+      "defaultLibraryPrefix/databases/*": [
+        "libs/databases/src/*"
+      ],
+      "defaultLibraryPrefix/entities": [
+        "libs/entities/src"
+      ],
+      "defaultLibraryPrefix/entities/*": [
+        "libs/entities/src/*"
+      ]
+    }
   }
 }
