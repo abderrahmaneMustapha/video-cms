@@ -42,7 +42,6 @@ export function validate(config: Record<string, unknown>) {
     throw new Error(errors.toString());
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return validatedConfig;
 }
 
