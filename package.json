@@ -12,7 +12,8 @@
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/apps/video-cms/main",
-    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+    "start:seeder:videos": "node scripts/seeders/videos.seeder",
+    "lint": "eslint \"{src,apps,libs,test,scripts}/**/*.ts\" --fix",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
@@ -25,8 +26,11 @@
     "@nestjs/core": "^11.0.1",
     "@nestjs/mongoose": "^11.0.3",
     "@nestjs/platform-express": "^11.0.1",
+    "@types/multer": "^1.4.13",
+    "buffer-to-stream": "^1.0.0",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.2",
+    "cloudinary": "^2.7.0",
     "mongoose": "^8.16.0",
     "mongoose-collection-naming-plugin": "^1.1.4",
     "reflect-metadata": "^0.2.2",
@@ -80,6 +84,7 @@
       "<rootDir>/libs/"
     ],
     "moduleNameMapper": {
+      "^cloudianry/cloudinary(|/.*)$": "<rootDir>/libs/cloudinary/src/$1",
       "^defaultLibraryPrefix/config(|/.*)$": "<rootDir>/libs/config/src/$1",
       "^defaultLibraryPrefix/databases(|/.*)$": "<rootDir>/libs/databases/src/$1",
       "^defaultLibraryPrefix/entities(|/.*)$": "<rootDir>/libs/entities/src/$1"

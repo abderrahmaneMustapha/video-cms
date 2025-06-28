@@ -18,6 +18,9 @@ export class Video {
   language: string;
 
   @Prop({ required: true })
+  link: string;
+
+  @Prop({ required: true })
   duration: number;
 
   @Prop({ required: true })

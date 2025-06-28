@@ -18,23 +18,23 @@
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
-      "defaultLibraryPrefix/config": [
+      "@lib/config": [
         "libs/config/src"
       ],
-      "defaultLibraryPrefix/config/*": [
+      "@lib/config/*": [
         "libs/config/src/*"
       ],
-      "defaultLibraryPrefix/databases": [
+      "@lib/databases": [
         "libs/databases/src"
       ],
-      "defaultLibraryPrefix/databases/*": [
+      "@lib/databases/*": [
         "libs/databases/src/*"
       ],
-      "defaultLibraryPrefix/entities": [
-        "libs/entities/src"
+      "@lib/cloudinary": [
+        "libs/cloudinary/src"
       ],
-      "defaultLibraryPrefix/entities/*": [
-        "libs/entities/src/*"
+      "@lib/cloudinary/*": [
+        "libs/cloudinary/src/*"
       ]
     }
   }

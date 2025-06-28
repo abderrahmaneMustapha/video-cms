@@ -5,6 +5,7 @@ import {
   MongooseCollectionNamingPlugin,
   NamingConvention,
 } from 'mongoose-collection-naming-plugin';
+import { VideoSchema, Video } from '@lib/databases/entities/videos.entity';
 
 @Module({
   imports: [
@@ -22,12 +23,13 @@ import {
               namingConvention: NamingConvention.CamelCase,
             });
 
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-return
             return connection;
           },
         };
       },
     }),
+    MongooseModule.forFeature([{ name: Video.name, schema: VideoSchema }]),
   ],
+  exports: [MongooseModule],
 })
 export class DatabaseModule {}

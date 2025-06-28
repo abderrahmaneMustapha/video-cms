@@ -20,13 +20,19 @@ class EnvironmentVariables {
   DATABASE_URL: string;
 
   @IsString()
-  STORAGE_DOMAIN: string;
-
-  @IsString()
   REDIS_HOST: string;
 
   @IsNumber()
   REDIS_PORT: number;
+
+  @IsString()
+  CLOUDINARY_CLOUD_NAME: string;
+
+  @IsString()
+  CLOUDINARY_API_KEY: string;
+
+  @IsString()
+  CLOUDINARY_API_SECRET: string;
 }
 
 export function validate(config: Record<string, unknown>) {
@@ -51,11 +57,13 @@ export default () => ({
   database: {
     url: process.env.DATABASE_URL,
   },
-  storage: {
-    domain: process.env.STORAGE_DOMAIN,
-  },
   redis: {
     host: process.env.REDIS_HOST,
     port: parseInt(process.env.REDIS_PORT as string),
+  },
+  cloudinary: {
+    cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+    apiKey: process.env.CLOUDINARY_API_KEY,
+    apiSecret: process.env.CLOUDINARY_API_SECRET,
   },
 });
