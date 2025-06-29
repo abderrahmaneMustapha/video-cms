@@ -23,6 +23,7 @@
     "test:e2e": "jest --config ./apps/video-cms/test/jest-e2e.json"
   },
   "dependencies": {
+    "@nestjs-modules/ioredis": "^2.0.2",
     "@nestjs/common": "^11.0.1",
     "@nestjs/config": "^4.0.2",
     "@nestjs/core": "^11.0.1",
@@ -33,6 +34,7 @@
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.2",
     "cloudinary": "^2.7.0",
+    "ioredis": "^5.6.1",
     "meilisearch": "^0.51.0",
     "mongoose": "^8.16.0",
     "mongoose-collection-naming-plugin": "^1.1.4",
@@ -88,6 +90,7 @@
     ],
     "moduleNameMapper": {
       "^@lib/meili(|/.*)$": "<rootDir>/libs/meili/src/$1",
+      "^@libs/redis(|/.*)$": "<rootDir>/libs/redis/src/$1",
       "^cloudianry/cloudinary(|/.*)$": "<rootDir>/libs/cloudinary/src/$1",
       "^defaultLibraryPrefix/config(|/.*)$": "<rootDir>/libs/config/src/$1",
       "^defaultLibraryPrefix/databases(|/.*)$": "<rootDir>/libs/databases/src/$1",

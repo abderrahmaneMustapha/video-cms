@@ -41,6 +41,12 @@
       ],
       "@lib/meili/*": [
         "libs/meili/src/*"
+      ],
+      "@libs/redis": [
+        "libs/redis/src"
+      ],
+      "@libs/redis/*": [
+        "libs/redis/src/*"
       ]
     }
   }
