@@ -18,6 +18,12 @@
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
+      "@lib/cloudinary": [
+        "libs/cloudinary/src"
+      ],
+      "@lib/cloudinary/*": [
+        "libs/cloudinary/src/*"
+      ],
       "@lib/config": [
         "libs/config/src"
       ],
@@ -30,11 +36,11 @@
       "@lib/databases/*": [
         "libs/databases/src/*"
       ],
-      "@lib/cloudinary": [
-        "libs/cloudinary/src"
+      "@lib/meili": [
+        "libs/meili/src"
       ],
-      "@lib/cloudinary/*": [
-        "libs/cloudinary/src/*"
+      "@lib/meili/*": [
+        "libs/meili/src/*"
       ]
     }
   }

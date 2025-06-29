@@ -66,4 +66,7 @@ export default () => ({
     apiKey: process.env.CLOUDINARY_API_KEY,
     apiSecret: process.env.CLOUDINARY_API_SECRET,
   },
+  meili: {
+    host: process.env.MEILI_HOST,
+  },
 });

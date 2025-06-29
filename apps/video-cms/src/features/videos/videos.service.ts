@@ -4,6 +4,7 @@ import { Model } from 'mongoose';
 import { Video, VideoDocument } from '@lib/databases';
 import { CreateVideoDto, UpdateVideoDto } from './dtos/videos.dto';
 import { CloudinaryService } from '@lib/cloudinary';
+import { MeiliService } from '@lib/meili';
 
 @Injectable()
 export class VideosService {
@@ -11,17 +12,22 @@ export class VideosService {
     @InjectModel(Video.name)
     private readonly videoModel: Model<VideoDocument>,
     private readonly cloudinaryService: CloudinaryService,
+    private readonly meiliService: MeiliService,
   ) {}
 
   async create(dto: CreateVideoDto, file: Express.Multer.File) {
-    // Upload to Cloudinary using the file buffer or path
     const uploadResult = await this.cloudinaryService.uploadVideo(file);
-
-    // Save in DB
     const createdVideo = await this.videoModel.create({
       ...dto,
       link: uploadResult.secure_url,
     });
+
+    const doc = {
+      id: createdVideo.id,
+      ...createdVideo.toObject(),
+    };
+
+    await this.meiliService.addDocuments('videos', [doc]);
 
     return createdVideo;
   }
@@ -42,12 +48,20 @@ export class VideosService {
       runValidators: true,
     });
     if (!video) throw new NotFoundException('Video not found');
+
+    const doc = {
+      id: video.id,
+      ...video.toObject(),
+    };
+
+    await this.meiliService.addDocuments('videos', [doc]);
     return video;
   }
 
   async remove(id: string) {
     const video = await this.videoModel.findByIdAndDelete(id);
     if (!video) throw new NotFoundException('Video not found');
+    await this.meiliService.deleteDocuments('videos', [id]);
     return video;
   }
 }

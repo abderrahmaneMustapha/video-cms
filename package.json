@@ -9,7 +9,9 @@
     "build": "nest build",
     "format": "prettier --write \"apps/**/*.ts\" \"libs/**/*.ts\"",
     "start": "nest start",
+    "start:discovery": "nest start discovery",
     "start:dev": "nest start --watch",
+    "start:discovery:dev": "nest start discovery --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/apps/video-cms/main",
     "start:seeder:videos": "node scripts/seeders/videos.seeder",
@@ -31,6 +33,7 @@
     "class-transformer": "^0.5.1",
     "class-validator": "^0.14.2",
     "cloudinary": "^2.7.0",
+    "meilisearch": "^0.51.0",
     "mongoose": "^8.16.0",
     "mongoose-collection-naming-plugin": "^1.1.4",
     "reflect-metadata": "^0.2.2",
@@ -84,6 +87,7 @@
       "<rootDir>/libs/"
     ],
     "moduleNameMapper": {
+      "^@lib/meili(|/.*)$": "<rootDir>/libs/meili/src/$1",
       "^cloudianry/cloudinary(|/.*)$": "<rootDir>/libs/cloudinary/src/$1",
       "^defaultLibraryPrefix/config(|/.*)$": "<rootDir>/libs/config/src/$1",
       "^defaultLibraryPrefix/databases(|/.*)$": "<rootDir>/libs/databases/src/$1",

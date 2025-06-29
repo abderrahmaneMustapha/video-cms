@@ -46,6 +46,15 @@
         "tsConfigPath": "apps/discovery/tsconfig.app.json"
       }
     },
+    "meili": {
+      "type": "library",
+      "root": "libs/meili",
+      "entryFile": "index",
+      "sourceRoot": "libs/meili/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/meili/tsconfig.lib.json"
+      }
+    },
     "video-cms": {
       "type": "application",
       "root": "apps/video-cms",
