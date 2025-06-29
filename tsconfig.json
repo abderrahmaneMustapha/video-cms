@@ -42,10 +42,10 @@
       "@lib/meili/*": [
         "libs/meili/src/*"
       ],
-      "@libs/redis": [
+      "@lib/redis": [
         "libs/redis/src"
       ],
-      "@libs/redis/*": [
+      "@lib/redis/*": [
         "libs/redis/src/*"
       ]
     }
